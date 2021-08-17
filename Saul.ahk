@@ -1,8 +1,16 @@
 #Requires AutoHotkey v2.0-beta.1
 
+Assert(expression, context := '') {
+    if (expression) {
+        return
+    }
+
+    throw Error("Failed assertion", -2, context)
+}
+
 AssertEquals(a, b, context := '') {
     try {
-        __Assert(Type(a) == Type(b))
+        Assert(Type(a) == Type(b))
 
         t := Type(a)
 
@@ -10,19 +18,19 @@ AssertEquals(a, b, context := '') {
             case 'Integer':
             case 'String':
             case 'Float':
-                __Assert(a == b)
+                Assert(a == b)
                 
                 return
             case 'Map':
-                __Assert(a.count == b.count)
+                Assert(a.count == b.count)
                 for (key, value in a) {
-                    __Assert(b.Has(key))
-                    __Assert(b.Get(key) == value)
+                    Assert(b.Has(key))
+                    Assert(b.Get(key) == value)
                 }
 
                 return
             case 'Array':
-                __Assert(a.length == b.length)
+                Assert(a.length == b.length)
                 for (index, value in a) {
                     AssertEquals(b[index], value)
                 }
@@ -34,12 +42,4 @@ AssertEquals(a, b, context := '') {
     } catch Error as e {
         throw Error("Failed assertion", -2, context)
     }
-}
-
-__Assert(expression, context := '') {
-    if (expression) {
-        return
-    }
-
-    throw Error("Failed assertion", -2, context)
 }
