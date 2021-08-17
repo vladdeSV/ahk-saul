@@ -1,6 +1,6 @@
 🛑 Unsuitable for production until v1.0 is released.
 
-# Saul :shipit:
+# Saul 🃏
 [![ahk version](https://img.shields.io/badge/AHK-2.0--beta.1-428B42)]()
 
 Tests are awesome, but sometimes having a whole testing suite is not suitable.
