@@ -26,7 +26,7 @@ AssertEquals(a, b, context := '') {
                 Assert(a.count == b.count)
                 for (key, value in a) {
                     Assert(b.Has(key))
-                    Assert(b.Get(key) == value)
+                    AssertEquals(b.Get(key), value)
                 }
 
                 return
