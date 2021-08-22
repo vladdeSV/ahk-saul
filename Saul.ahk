@@ -18,6 +18,7 @@ AssertEquals(a, b, context := '') {
             case 'Integer':
             case 'String':
             case 'Float':
+            case 'Object':
                 Assert(a == b)
                 
                 return
