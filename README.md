@@ -11,7 +11,7 @@ Currently, only two function are provided
 - `Assert(expression, context := '')`, if `expression` is falsy, an error is thrown with the message `context`.
 - `AssertEquals(a, b, context := '')`, if `a` is not strictly equal to `b`*, an error is thrown with the message `context`.
 
-<sub>* If both `a` and `b` are both of type `Array` or `Map`, they are recursively checked by value or key/value respectively. Currently only supports the types `number`, `string`, `Map`, and `Array`.</sub>
+<sub>* If both `a` and `b` are both of type `Array` or `Map`, they are recursively checked by value or key/value respectively. Currently only supports the types `number`, `string`, `Object`, `Map`, and `Array`.</sub>
 
 ## Example
 
