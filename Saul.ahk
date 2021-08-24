@@ -15,10 +15,7 @@ AssertEquals(a, b, context := '') {
         t := Type(a)
 
         switch (t) {
-            case 'Integer':
-            case 'String':
-            case 'Float':
-            case 'Object':
+            case 'Integer', 'String', 'Float', 'Object':
                 Assert(a == b)
                 
                 return
