@@ -15,10 +15,6 @@ AssertEquals(a, b, context := '') {
         t := Type(a)
 
         switch (t) {
-            case 'Integer', 'String', 'Float', 'Object':
-                Assert(a == b)
-                
-                return
             case 'Map':
                 Assert(a.count == b.count)
                 for (key, value in a) {
@@ -35,7 +31,9 @@ AssertEquals(a, b, context := '') {
 
                 return
             default:
-                throw Error('AssertEquals for type `'' . t . '`' not yet supported')
+                Assert(a == b)
+                
+                return
         }
     } catch Error as e {
         throw Error("Failed assertion", -2, context)
